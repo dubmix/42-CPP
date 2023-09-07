@@ -1,31 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   contact.cpp                                        :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdelanno <pdelanno@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/16 16:10:00 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/08/16 16:20:59 by pdelanno         ###   ########.fr       */
+/*   Created: 2023/08/16 15:06:51 by pdelanno          #+#    #+#             */
+/*   Updated: 2023/08/16 17:06:33 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "contact.hpp"
+#include "phonebook.hpp"
 
-Contact::Contact(void)
+int main(void)
 {
-}
+	Phonebook	phb;
+	std::string	str;
 
-Contact::~Contact(void)
-{
-}
-
-std::string		Contact::get_data(int i)
-{
-	return(this->_data[i]);
-}
-
-void	Contact::set_data(std::string str, int i)
-{
-	this->_data[i] = str;
+	while (str != "EXIT")
+	{
+		std::cout << "Enter a command > ";
+		std::getline (std::cin, str);
+		if (str == "ADD")
+			phb.add();
+		if (str == "SEARCH")
+			phb.search();
+		if (std::cin.eof())
+		{
+			std::cout << std::endl;
+			return (0);
+		}
+		std::cout << std::endl;
+	}
+	return (0);
 }

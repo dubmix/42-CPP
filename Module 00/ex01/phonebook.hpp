@@ -16,16 +16,22 @@
 
 #include "contact.hpp"
 #include <iostream>
+#include <sstream>
 #include <string>
+#include <cstring>
 
 class	Phonebook
 {
 	public:
 			Phonebook(void);
 			~Phonebook(void);
-			void	add(void);
-			//void	search(void);
-			//void	print();
+			void		add(void);
+			int			add_info(std::string str, int i);
+			void		search(void);
+			void		print(int i);
+			std::string adapt(std::string str);
+			int			isNumber(std::string str);
+			int 		strToInt(const std::string str);
 	private:
 			Contact _contacts[8];
 			int		_index;

@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdelanno <pdelanno@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/16 15:06:51 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/08/16 17:06:33 by pdelanno         ###   ########.fr       */
+/*   Created: 2023/08/16 15:29:14 by pdelanno          #+#    #+#             */
+/*   Updated: 2023/08/16 16:09:50 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.hpp"
+#ifndef CONTACT_HPP
 
-int main(void)
+# define CONTACT_HPP
+
+# include <iostream>
+# include <string>
+
+class	Contact
 {
-	Phonebook	phb;
-	std::string	str;
+	public:
+			Contact(void);
+			~Contact(void);
+			void			set_data(std::string str, int i);
+			std::string		get_data(int i);
+	private:
+			std::string			_data[6];
+};
 
-	while (str != "EXIT")
-	{
-		std::cout << "Enter a command > ";
-		std::getline (std::cin, str);
-		if (str == "ADD")
-			phb.add();
-		if (std::cin.eof())
-		{
-			std::cout << std::endl;
-			return (0);
-		}
-		std::cout << std::endl;
-	}
-	return (0);
-}
+#endif
