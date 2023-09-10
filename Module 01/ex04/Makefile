@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/09/10 09:35:34 by pdelanno          #+#    #+#              #
-#    Updated: 2023/09/10 13:34:10 by pdelanno         ###   ########.fr        #
+#    Created: 2023/09/10 13:47:25 by pdelanno          #+#    #+#              #
+#    Updated: 2023/09/10 13:59:18 by pdelanno         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
+SRC = main.cpp
 
 OBJS = $(SRC:.cpp=.o)
 
@@ -18,7 +18,7 @@ CPPFLAGS = -Wall -Werror -Wextra -std=c++98
 
 COMP = g++
 
-NAME = weaponz
+NAME = sed
 
 all: $(NAME)
 

@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 09:37:51 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/10 10:44:14 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/09/10 13:26:14 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ class HumanB
             HumanB(std::string name);
             ~HumanB(void);
             void    attack(void);
-            void    setWeapon(Weapon weapon);
+            void    setWeapon(Weapon &weapon);
 
     private:
             std::string _name;
-            Weapon _weapon;
+            Weapon *_weapon;
 };
 
 #endif

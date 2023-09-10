@@ -6,14 +6,15 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 09:36:14 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/10 10:34:51 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/09/10 12:52:59 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Weapon.hpp"
 
 Weapon::Weapon(std::string type)
-{ 
+{
+    this->_type = type;
 }
 
 Weapon::~Weapon(void)

@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/09/10 09:35:34 by pdelanno          #+#    #+#              #
-#    Updated: 2023/09/10 13:34:10 by pdelanno         ###   ########.fr        #
+#    Created: 2023/09/10 14:47:32 by pdelanno          #+#    #+#              #
+#    Updated: 2023/09/10 15:42:22 by pdelanno         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
+SRC = main.cpp Harl.cpp
 
 OBJS = $(SRC:.cpp=.o)
 
@@ -18,7 +18,7 @@ CPPFLAGS = -Wall -Werror -Wextra -std=c++98
 
 COMP = g++
 
-NAME = weaponz
+NAME = harlFilter
 
 all: $(NAME)
 

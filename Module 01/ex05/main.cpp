@@ -1,32 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/10 09:37:37 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/10 14:51:46 by pdelanno         ###   ########.fr       */
+/*   Created: 2023/09/10 14:47:43 by pdelanno          #+#    #+#             */
+/*   Updated: 2023/09/10 15:10:29 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANA_HPP
+#include "Harl.hpp"
 
-# define HUMANA_HPP
-
-# include "Weapon.hpp"
-
-class HumanA
+int main(void)
 {
-    public:
-            HumanA(std::string name, Weapon &weapon);
-            ~HumanA(void);
-            void    attack(void);
-            void    setWeapon(Weapon weapon);
+    Harl Harl;
 
-    private:
-            std::string _name;
-            Weapon &_weapon;
-};
-
-#endif
+    Harl.complain("DEBUG");
+    Harl.complain("INFO");
+    Harl.complain("WARNING");
+    Harl.complain("ERROR");
+    return (0);
+}
