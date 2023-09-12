@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 15:58:15 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/12 08:33:44 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/09/12 08:48:45 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ ScavTrap::ScavTrap()
 
 ScavTrap::ScavTrap(std::string const &name): ClapTrap(name)
 {
-    std::cout << "ScavTrap " << this->_name << " transformed into a mighty ScavTrap!" << std::endl;
+    std::cout << "ClapTrap " << this->_name << " transformed into a mighty ScavTrap!" << std::endl;
     this->_hitPoints = 100;
     this->_energyPoints = 50;
     this->_attackDamage = 20;

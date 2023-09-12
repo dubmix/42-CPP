@@ -6,11 +6,11 @@
 #    By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/11 13:32:16 by pdelanno          #+#    #+#              #
-#    Updated: 2023/09/12 08:26:55 by pdelanno         ###   ########.fr        #
+#    Updated: 2023/09/12 09:06:40 by pdelanno         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = main.cpp ClapTrap.cpp ScavTrap.cpp 
+SRC = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
 
 OBJS = $(SRC:.cpp=.o)
 
