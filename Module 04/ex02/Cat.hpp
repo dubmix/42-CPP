@@ -1,25 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/10 08:17:07 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/13 15:32:11 by pdelanno         ###   ########.fr       */
+/*   Created: 2023/09/12 10:34:00 by pdelanno          #+#    #+#             */
+/*   Updated: 2023/09/13 08:10:46 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef CAT_HPP
 
-Zombie *zombieHorde(int n, std::string name);
+# define CAT_HPP
 
-int main(void)
+# include "Animal.hpp"
+
+class Cat: public Animal
 {
-    int n = 10;
+    public:
+            Cat();
+            Cat(Cat const &copy);
+            ~Cat();
 
-    Zombie *horde = zombieHorde(n, "Jean-Marc");
-    for (int i = 0; i < n; i++)
-        horde[i].announce();
-    delete [] horde;
-}
+            Cat &operator=(Cat const &copy);
+
+            void makeSound() const;
+            Brain *getBrain() const;
+
+    private:
+            Brain *_brain;
+};
+
+#endif

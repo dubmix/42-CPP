@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.hpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pdelanno <pdelanno@student.42berlin.d      +#+  +:+       +#+        */
+/*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 15:12:23 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/08/16 16:26:05 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/09/13 14:45:59 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 # define PHONEBOOK_HPP
 
-#include "contact.hpp"
+#include "Contact.hpp"
 #include <iostream>
 #include <sstream>
 #include <string>

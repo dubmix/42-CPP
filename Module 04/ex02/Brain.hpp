@@ -1,25 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/10 08:17:07 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/13 15:32:11 by pdelanno         ###   ########.fr       */
+/*   Created: 2023/09/13 07:27:42 by pdelanno          #+#    #+#             */
+/*   Updated: 2023/09/13 08:07:10 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef BRAIN_HPP
 
-Zombie *zombieHorde(int n, std::string name);
+# define BRAIN_HPP
 
-int main(void)
+# include <iostream>
+
+class Brain
 {
-    int n = 10;
+    public:
+            Brain();
+            Brain(Brain const &copy);
+            ~Brain();
 
-    Zombie *horde = zombieHorde(n, "Jean-Marc");
-    for (int i = 0; i < n; i++)
-        horde[i].announce();
-    delete [] horde;
-}
+            Brain &operator=(Brain const &copy);
+
+            std::string getIdeas(int index) const;
+    
+    private:
+            std::string _ideas[100];
+};
+
+#endif

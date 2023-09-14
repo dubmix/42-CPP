@@ -1,25 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/10 08:17:07 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/13 15:32:11 by pdelanno         ###   ########.fr       */
+/*   Created: 2023/09/13 07:12:15 by pdelanno          #+#    #+#             */
+/*   Updated: 2023/09/13 08:10:55 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef DOG_HPP
 
-Zombie *zombieHorde(int n, std::string name);
+# define DOG_HPP
 
-int main(void)
+# include "Animal.hpp"
+
+class Dog: public Animal
 {
-    int n = 10;
+    public:
+            Dog();
+            Dog(Dog const &copy);
+            ~Dog();
 
-    Zombie *horde = zombieHorde(n, "Jean-Marc");
-    for (int i = 0; i < n; i++)
-        horde[i].announce();
-    delete [] horde;
-}
+            Dog &operator=(Dog const &copy);
+
+            void makeSound() const;
+            Brain *getBrain() const;
+    
+    private:
+            Brain *_brain;
+};
+
+#endif

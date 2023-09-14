@@ -5,21 +5,29 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/10 08:17:07 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/13 15:32:11 by pdelanno         ###   ########.fr       */
+/*   Created: 2023/09/12 09:22:00 by pdelanno          #+#    #+#             */
+/*   Updated: 2023/09/13 08:42:43 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Cat.hpp"
+#include "Dog.hpp"
 
-Zombie *zombieHorde(int n, std::string name);
-
-int main(void)
+int main()
 {
-    int n = 10;
+    //const Animal *meta = new Animal();
+    const Animal *i = new Dog();
+    const Animal *j = new Cat();
+    
+    std::cout << std::endl;
+    std::cout << i->getType() << " " << std::endl;
+    i->makeSound();
+    std::cout << j->getType() << " " << std::endl;
+    j->makeSound();
+    std::cout << std::endl;
 
-    Zombie *horde = zombieHorde(n, "Jean-Marc");
-    for (int i = 0; i < n; i++)
-        horde[i].announce();
-    delete [] horde;
+    delete i;
+    delete j;
+
+    return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 09:38:30 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/10 13:23:08 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/09/13 11:58:04 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,3 @@ void    HumanB::setWeapon(Weapon &weapon)
 {
     this->_weapon = &weapon;
 }
-
-
-

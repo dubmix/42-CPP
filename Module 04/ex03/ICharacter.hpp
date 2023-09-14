@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/10 08:17:07 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/13 15:32:11 by pdelanno         ###   ########.fr       */
+/*   Created: 2023/09/13 09:02:41 by pdelanno          #+#    #+#             */
+/*   Updated: 2023/09/13 09:24:56 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef ICHARACTER_HPP
 
-Zombie *zombieHorde(int n, std::string name);
+# define ICHARACTER_HPP
 
-int main(void)
+# include <iostream>
+
+class ICharacter
 {
-    int n = 10;
+    public:
+            virtual ~ICharacter() {}
+            virtual std::string const &getName() const = 0;
+            virtual void equip(AMateria *m) = 0;
+            virtual void unequip(int idx) = 0;
+            virtual void use(int idx, ICharacter &target) = 0;
+};
 
-    Zombie *horde = zombieHorde(n, "Jean-Marc");
-    for (int i = 0; i < n; i++)
-        horde[i].announce();
-    delete [] horde;
-}
+#endif

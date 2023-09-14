@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-SRC = main.cpp phonebook.cpp contact.cpp
+SRC = main.cpp PhoneBook.cpp Contact.cpp
 
 OBJS = $(SRC:.cpp=.o)
 

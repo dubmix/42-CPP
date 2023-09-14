@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 14:47:43 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/10 16:03:02 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/09/14 06:47:20 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int main(int argc, char *argv[])
 {
     if (argc != 2)
     {
-        std::cout << "Program needs one parameter" << std::endl;
+        std::cout << "Program needs one filter parameter" << std::endl;
         return (1);
     }
     
