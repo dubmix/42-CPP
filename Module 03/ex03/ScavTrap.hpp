@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 15:44:04 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/14 11:27:06 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/09/14 07:51:17 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,15 @@
 
 # include "ClapTrap.hpp"
 
-class ScavTrap: public ClapTrap
+class ScavTrap: virtual public ClapTrap
 {
     public:
             ScavTrap();
             ScavTrap(std::string const &name);
-            ScavTrap(ScavTrap const &src);
+            ScavTrap(ScavTrap const &copy);
             ~ScavTrap();
             
-            ScavTrap &operator=(ScavTrap const &src);
+            ScavTrap &operator=(ScavTrap const &copy);
 
             void    attack(std::string const &target);
             void    guardGate(void);

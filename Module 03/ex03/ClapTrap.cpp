@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 13:33:00 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/14 11:28:30 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/09/14 08:22:21 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,30 +17,24 @@ ClapTrap::ClapTrap()
     std::cout << "Default ClapTrap constructor called" << std::endl;
 }
 
+ClapTrap::ClapTrap(ClapTrap const &copy)
+{
+    *this = copy;
+}
+
+ClapTrap &ClapTrap::operator=(ClapTrap const &copy)
+{
+    this->_name = copy._name;
+    this->_hitPoints = copy._hitPoints;
+    this->_energyPoints = copy._energyPoints;
+    this->_attackDamage = copy._attackDamage;
+    return (*this);
+}
+
 ClapTrap::ClapTrap(std::string name): _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
     this->_name = name;
     std::cout << "ClapTrap " << name << " was created" << std::endl;
-}
-
-ClapTrap::ClapTrap(ClapTrap const &src)
-{
-    std::cout << "ClapTrap copy constructor called" << std::endl;
-    this->_name = src._name;
-    this->_hitPoints = src._hitPoints;
-    this->_energyPoints = src._energyPoints;
-    this->_attackDamage = src._attackDamage;
-}
-
-ClapTrap &ClapTrap::operator=(ClapTrap const &src)
-{
-    if (this == &src)
-        return (*this);
-    this->_name = src._name;
-    this->_hitPoints = src._hitPoints;
-    this->_energyPoints = src._energyPoints;
-    this->_attackDamage = src._attackDamage;
-    return (*this);
 }
 
 ClapTrap::~ClapTrap()

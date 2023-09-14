@@ -6,22 +6,49 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 13:33:00 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/11 15:57:13 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/09/14 10:00:05 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(std::string name): _hitPoints(10), _energyPoints(10), _attackDamage(0)
+ClapTrap::ClapTrap(): _name("Default"), _hitPoints(10), _energyPoints(10), _attackDamage(1) 
+{
+    std::cout << "Default ClapTrap constructor called" << std::endl;
+}
+
+ClapTrap::ClapTrap(std::string name): _hitPoints(10), _energyPoints(10), _attackDamage(1)
 {
     this->_name = name;
     std::cout << "ClapTrap " << name << " was created" << std::endl;
+}
+
+ClapTrap::ClapTrap(ClapTrap const &src)
+{
+    std::cout << "ClapTrap copy constructor called" << std::endl;
+    //src._name = "Constantin";
+    this->_name = src._name;
+    this->_hitPoints = src._hitPoints;
+    this->_energyPoints = src._energyPoints;
+    this->_attackDamage = src._attackDamage;
+}
+
+ClapTrap &ClapTrap::operator=(ClapTrap const &src)
+{
+    if (this == &src) // safety for chaining assignments
+        return (*this);
+    this->_name = src._name;
+    this->_hitPoints = src._hitPoints;
+    this->_energyPoints = src._energyPoints;
+    this->_attackDamage = src._attackDamage;
+    return (*this); // chaining only with original object
 }
 
 ClapTrap::~ClapTrap()
 {
     std::cout << "ClapTrap " << this->_name << " was destroyed" << std::endl;
 }
+
 
 void ClapTrap::attack(const std::string &target)
 {
@@ -68,4 +95,9 @@ void ClapTrap::beRepaired(unsigned int amount)
 int ClapTrap::getHitPoints()
 {
     return (this->_hitPoints);
+}
+
+std::string ClapTrap::getName()
+{
+    return (this->_name);
 }
