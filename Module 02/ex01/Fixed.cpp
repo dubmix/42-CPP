@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 07:15:38 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/12 05:59:04 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/09/22 08:48:07 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 const int   Fixed::_fractionalBits = 8;
 
-std::ostream &operator<<(std::ostream &str, Fixed const &fixedNb)
+std::ostream &operator<<(std::ostream &str, Fixed const &fixedNb) // fixedNb is an existing object
 {
-    return (str << fixedNb.toFloat());
+    return (str << fixedNb.toFloat()); // always converts to float from fixed point value
 }
 
 Fixed::Fixed(void): _fixedPointValue(0)
@@ -29,10 +29,10 @@ Fixed::~Fixed(void)
     std::cout << "Destructor called" << std::endl;
 }
 
-Fixed::Fixed(Fixed const &copy)
+Fixed::Fixed(Fixed const &src)
 {
     std::cout << "Copy constructor called" << std::endl;
-    *this = copy;
+    this->_fixedPointValue = src._fixedPointValue;
 }
 
 Fixed::Fixed(int const nb)
@@ -44,13 +44,16 @@ Fixed::Fixed(int const nb)
 Fixed::Fixed(float const nb)
 {
     std::cout << "Float constructor called" << std::endl;
-    this->_fixedPointValue = roundf(nb * (1 << _fractionalBits));
+    this->_fixedPointValue = roundf(nb * (1 << _fractionalBits));  //multiplies by 256, 
+    // captures as much precision as possible within the constraints of fractional bits
 }
 
-Fixed   &Fixed::operator=(Fixed const &copy)
+Fixed   &Fixed::operator=(Fixed const &src)
 {
     std::cout << "Copy assignment operator called" << std::endl;
-    this->_fixedPointValue = copy.getRawBits();
+    if (this == &src) // safety for chaining assignments
+        return (*this);
+    this->_fixedPointValue = src.getRawBits();
     return (*this);
 }
 
@@ -66,7 +69,7 @@ void Fixed::setRawBits(int const raw)
 
 int Fixed::toInt(void) const
 {
-    return (roundf(this->_fixedPointValue >> _fractionalBits));
+    return (roundf(this->_fixedPointValue >> _fractionalBits)); // divides by 256
 }
 
 float Fixed::toFloat(void) const

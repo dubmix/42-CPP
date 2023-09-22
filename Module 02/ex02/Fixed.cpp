@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 07:15:38 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/12 06:47:56 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/09/19 14:25:16 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -173,7 +173,7 @@ Fixed &Fixed::max(Fixed &a, Fixed &b)
         return (b);
 }
 
-const Fixed &Fixed::min(Fixed const &a, Fixed const &b)
+const Fixed &Fixed::min(Fixed const &a, Fixed const &b) //perfect example of overloading
 {
     if (a.getRawBits() < b.getRawBits())
         return (a);

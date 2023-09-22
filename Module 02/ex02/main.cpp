@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 07:06:27 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/11 10:38:29 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/09/19 14:24:20 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,9 @@ int main(void)
     std::cout << a << std::endl;
 
     std::cout << b << std::endl;
-
+    
     std::cout << Fixed::max(a, b) << std::endl;
+    std::cout << Fixed::min(a, b) << std::endl;
 
     return (0);
 }
