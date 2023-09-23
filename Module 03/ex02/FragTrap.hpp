@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 08:39:12 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/12 09:03:28 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/09/23 07:43:01 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,8 @@ class FragTrap: public ClapTrap
 {
     public:
             FragTrap();
-            FragTrap(std::string const &name); // why &
-            FragTrap(FragTrap const &copy);
+            FragTrap(std::string const &name);
             ~FragTrap();
-
-            FragTrap &operator=(FragTrap const &copy);
 
             void    attack(std::string const &target);
             void    highFivesGuys(void);

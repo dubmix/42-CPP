@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 13:33:00 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/14 10:00:05 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/09/23 07:10:50 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ ClapTrap::ClapTrap(ClapTrap const &src)
 
 ClapTrap &ClapTrap::operator=(ClapTrap const &src)
 {
-    if (this == &src) // safety for chaining assignments
+    if (this == &src) // safety for self-assignment
         return (*this);
     this->_name = src._name;
     this->_hitPoints = src._hitPoints;

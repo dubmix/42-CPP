@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 08:39:08 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/12 09:14:26 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/09/23 07:46:37 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,23 +25,9 @@ FragTrap::FragTrap(std::string const &name): ClapTrap(name)
     this->_attackDamage = 30;
 }
 
-FragTrap::FragTrap(FragTrap const &copy): ClapTrap(copy)
-{
-    std::cout << "FragTrap copy called" << std::endl;
-}
-
 FragTrap::~FragTrap()
 {
     std::cout << "FragTrap " << this->_name << " was destroyed" << std::endl;
-}
-
-FragTrap &FragTrap::operator=(FragTrap const &copy)
-{
-    this->_name = copy._name;
-    this->_hitPoints = copy._hitPoints;
-    this->_energyPoints = copy._energyPoints;
-    this->_attackDamage = copy._attackDamage;
-    return (*this);
 }
 
 void FragTrap::highFivesGuys(void)
@@ -56,7 +42,7 @@ void FragTrap::highFivesGuys(void)
 		std::cout << std::endl;
 		return ;
 	}
-    if (str == "no" || str == "NO")
+    if (str == "no" || str == "NO" || str == "n")
     {
         std::cout << "😢" << std::endl;
     }

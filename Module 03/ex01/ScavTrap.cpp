@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 15:58:15 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/14 11:27:52 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/09/23 07:35:36 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,21 +25,9 @@ ScavTrap::ScavTrap(std::string const &name): ClapTrap(name)
     this->_attackDamage = 20;
 }
 
-ScavTrap::ScavTrap(ScavTrap const &src): ClapTrap(src)
-{
-    std::cout << "ScavTrap copy called" << std::endl;
-}
-
 ScavTrap::~ScavTrap()
 {
     std::cout << "ScavTrap " << this->_name << " was destroyed" << std::endl;
-}
-
-ScavTrap &ScavTrap::operator=(ScavTrap const &copy)
-{
-    std::cout << "Assignment operator for ScavTrap called" << std::endl;
-    ScavTrap::operator=(copy);
-    return(*this);
 }
 
 void ScavTrap::guardGate()

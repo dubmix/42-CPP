@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 07:15:38 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/22 07:25:58 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/09/23 07:11:28 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ Fixed::Fixed(Fixed const &src)
 Fixed   &Fixed::operator=(Fixed const &src)
 {
     std::cout << "Copy assignment operator called" << std::endl;
-    if (this == &src) // safety for chaining assignments
+    if (this == &src) // safety for self-assignment
         return (*this);
     this->_fixedPointValue = src.getRawBits();
     return (*this);

@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 08:39:12 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/14 07:51:11 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/09/23 08:17:03 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,13 @@
 
 # include "ClapTrap.hpp"
 
-class FragTrap: virtual public ClapTrap
+class FragTrap: virtual public ClapTrap // virtual inheritance
+// ensures that only one instance of the base class is used
 {
     public:
             FragTrap();
-            FragTrap(std::string const &name); // why &
-            FragTrap(FragTrap const &copy);
+            FragTrap(std::string const &name);
             ~FragTrap();
-
-            FragTrap &operator=(FragTrap const &copy);
 
             void    attack(std::string const &target);
             void    highFivesGuys(void);

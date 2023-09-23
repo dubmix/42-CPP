@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 13:34:34 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/12 09:10:37 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/09/23 07:45:08 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,7 @@ int main(void)
     
     std::cout << "Bong's hitpoints: " << bong.getHitPoints() << std::endl;
     std::cout << "Bing's hitpoints: " << bing.getHitPoints() << std::endl;
+    std::cout << std::endl;
+    
     return (0);
 }

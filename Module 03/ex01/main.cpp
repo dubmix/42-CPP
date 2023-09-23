@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 13:34:34 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/12 07:40:13 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/09/23 07:23:44 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ int main(void)
 {
     ClapTrap bing("Bing");
     ScavTrap bong("Bong");
+    std::cout << std::endl;
     
     for (int i = 0; i < 2; i++)
     {
-        std::cout << std::endl;
         bing.attack("Bong");
         bong.takeDamage(0);
         bong.attack("Bing");
@@ -27,8 +27,11 @@ int main(void)
         std::cout << std::endl;
     }
     bong.guardGate();
+    std::cout << std::endl;
     
     std::cout << "Bong's hitpoints: " << bong.getHitPoints() << std::endl;
     std::cout << "Bing's hitpoints: " << bing.getHitPoints() << std::endl;
+    std::cout << std::endl;
+    
     return (0);
 }

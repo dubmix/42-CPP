@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 07:15:38 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/19 14:25:16 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/09/23 07:11:45 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,10 @@ Fixed::~Fixed(void)
     std::cout << "Destructor called" << std::endl;
 }
 
-Fixed::Fixed(Fixed const &copy)
+Fixed::Fixed(Fixed const &src)
 {
     std::cout << "Copy constructor called" << std::endl;
-    *this = copy;
+    this->_fixedPointValue = src._fixedPointValue;
 }
 
 Fixed::Fixed(int const nb)
@@ -47,10 +47,12 @@ Fixed::Fixed(float const nb)
     this->_fixedPointValue = roundf(nb * (1 << _fractionalBits));
 }
 
-Fixed   &Fixed::operator=(Fixed const &copy)
+Fixed   &Fixed::operator=(Fixed const &src)
 {
     std::cout << "Copy assignment operator called" << std::endl;
-    this->_fixedPointValue = copy.getRawBits();
+    if (this == &src)
+        return (*this);
+    this->_fixedPointValue = src.getRawBits();
     return (*this);
 }
 
@@ -77,60 +79,60 @@ float Fixed::toFloat(void) const
     return (n);
 }
 
-bool Fixed::operator>(Fixed const &copy)
+bool Fixed::operator>(Fixed const &src)
 {
-    return (this->getRawBits() > copy.getRawBits());
+    return (this->getRawBits() > src.getRawBits());
 }
 
-bool Fixed::operator<(Fixed const &copy)
+bool Fixed::operator<(Fixed const &src)
 {
-    return (this->getRawBits() < copy.getRawBits());
+    return (this->getRawBits() < src.getRawBits());
 }
 
-bool Fixed::operator>=(Fixed const &copy)
+bool Fixed::operator>=(Fixed const &src)
 {
-    return (this->getRawBits() >= copy.getRawBits());
+    return (this->getRawBits() >= src.getRawBits());
 }
 
-bool Fixed::operator<=(Fixed const &copy)
+bool Fixed::operator<=(Fixed const &src)
 {
-    return (this->getRawBits() <= copy.getRawBits());
+    return (this->getRawBits() <= src.getRawBits());
 }
 
-bool Fixed::operator==(Fixed const &copy)
+bool Fixed::operator==(Fixed const &src)
 {
-    return (this->getRawBits() == copy.getRawBits());
+    return (this->getRawBits() == src.getRawBits());
 }
 
-bool Fixed::operator!=(Fixed const &copy)
+bool Fixed::operator!=(Fixed const &src)
 {
-    return (this->getRawBits() != copy.getRawBits());
+    return (this->getRawBits() != src.getRawBits());
 }
 
-Fixed   Fixed::operator+(Fixed const &copy)
+Fixed   Fixed::operator+(Fixed const &src)
 {
-    return (Fixed(this->toFloat() + copy.toFloat()));
+    return (Fixed(this->toFloat() + src.toFloat()));
 }
 
-Fixed   Fixed::operator-(Fixed const &copy)
+Fixed   Fixed::operator-(Fixed const &src)
 {
-    return (Fixed(this->toFloat() - copy.toFloat()));
+    return (Fixed(this->toFloat() - src.toFloat()));
 }
 
-Fixed   Fixed::operator*(Fixed const &copy)
+Fixed   Fixed::operator*(Fixed const &src)
 {
-    return (Fixed(this->toFloat() * copy.toFloat()));
+    return (Fixed(this->toFloat() * src.toFloat()));
 }
 
-Fixed   Fixed::operator/(Fixed const &copy)
+Fixed   Fixed::operator/(Fixed const &src)
 {
-    return (Fixed(this->toFloat() / copy.toFloat()));
+    return (Fixed(this->toFloat() / src.toFloat()));
 }
 
 Fixed &Fixed::operator++(void)
 {
     ++this->_fixedPointValue;
-    return (*this);
+    return (*this); // using the ref modifies the original object's state directly
 }
 
 Fixed &Fixed::operator--(void)
@@ -139,13 +141,13 @@ Fixed &Fixed::operator--(void)
     return (*this);
 }
 
-Fixed   Fixed::operator++(int)
+Fixed   Fixed::operator++(int) // i.e. a++
 {
     Fixed tmp;
 
     tmp = *this;
     tmp._fixedPointValue = this->_fixedPointValue++;
-    return (tmp);
+    return (tmp); // _fixedPointValue is incremented, but the return value is the original
 }
 
 Fixed   Fixed::operator--(int)
@@ -157,7 +159,7 @@ Fixed   Fixed::operator--(int)
     return (tmp);
 }
 
-Fixed &Fixed::min(Fixed &a, Fixed &b)
+Fixed &Fixed::min(Fixed &a, Fixed &b)  //perfect example of overloading, needs to work with objects type "fixed"
 {
     if (a.getRawBits() < b.getRawBits())
         return (a);
@@ -173,7 +175,7 @@ Fixed &Fixed::max(Fixed &a, Fixed &b)
         return (b);
 }
 
-const Fixed &Fixed::min(Fixed const &a, Fixed const &b) //perfect example of overloading
+const Fixed &Fixed::min(Fixed const &a, Fixed const &b)
 {
     if (a.getRawBits() < b.getRawBits())
         return (a);

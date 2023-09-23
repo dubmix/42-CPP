@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 13:33:00 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/14 08:22:21 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/09/23 07:50:22 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,23 @@ ClapTrap::ClapTrap()
     std::cout << "Default ClapTrap constructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap(ClapTrap const &copy)
+ClapTrap::ClapTrap(ClapTrap const &src)
 {
-    *this = copy;
+    std::cout << "ClapTrap copy constructor called" << std::endl;
+    this->_name = src._name;
+    this->_hitPoints = src._hitPoints;
+    this->_energyPoints = src._energyPoints;
+    this->_attackDamage = src._attackDamage;
 }
 
-ClapTrap &ClapTrap::operator=(ClapTrap const &copy)
+ClapTrap &ClapTrap::operator=(ClapTrap const &src)
 {
-    this->_name = copy._name;
-    this->_hitPoints = copy._hitPoints;
-    this->_energyPoints = copy._energyPoints;
-    this->_attackDamage = copy._attackDamage;
+    if (this == &src)
+        return (*this);
+    this->_name = src._name;
+    this->_hitPoints = src._hitPoints;
+    this->_energyPoints = src._energyPoints;
+    this->_attackDamage = src._attackDamage;
     return (*this);
 }
 
