@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 07:08:28 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/23 08:02:07 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/09/25 13:43:58 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,9 @@ DiamondTrap::DiamondTrap(std::string const &name)
 {
     this->_name = name;
     this->ClapTrap::_name = name + " _clap_name";
-
     this->_hitPoints = FragTrap::_hitPoints;
     this->_energyPoints = ScavTrap::_energyPoints;
     this->_attackDamage = FragTrap::_attackDamage;
-
     std::cout << this->_name << ", the almighty DIAMONDTRAP has been created! Crazy!! 🤪" << std::endl;
 }
 

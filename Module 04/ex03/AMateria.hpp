@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 09:10:32 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/13 09:20:31 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/09/27 07:00:21 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class AMateria
     public:
             AMateria();
             AMateria(std::string const &type);
-            AMateria(AMateria const &copy);
+            AMateria(AMateria const &src);
             virtual ~AMateria();
 
             std::string const &getType() const;
