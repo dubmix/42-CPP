@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.cpp                                            :+:      :+:    :+:   */
+/*   Fire.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/27 08:24:54 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/27 10:04:39 by pdelanno         ###   ########.fr       */
+/*   Created: 2023/09/27 10:11:52 by pdelanno          #+#    #+#             */
+/*   Updated: 2023/09/27 10:25:18 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Ice.hpp"
+#include "Fire.hpp"
 
-Ice::Ice(): AMateria("ice")
+Fire::Fire(): AMateria("fire")
 {
-    std::cout << "Default ice constructor called" << std::endl;
+    std::cout << "Default Fire constructor called" << std::endl;
 }
 
-Ice::Ice(Ice const &src): AMateria("ice")
+Fire::Fire(Fire const &src): AMateria("Fire")
 {
-    std::cout << "Ice copy constructor called" << std::endl;
+    std::cout << "Fire copy constructor called" << std::endl;
     this->_type = src._type;
 }
 
-Ice &Ice::operator=(Ice const &src)
+Fire &Fire::operator=(Fire const &src)
 {
     if (this == &src)
         return (*this);
@@ -31,17 +31,17 @@ Ice &Ice::operator=(Ice const &src)
     return (*this);
 }
 
-Ice::~Ice()
+Fire::~Fire()
 {
-    std::cout << "Ice destructor called" << std::endl;
+    std::cout << "Fire destructor called" << std::endl;
 }
 
-AMateria *Ice::clone() const
+AMateria *Fire::clone() const
 {
-    return (new Ice(*this));
+    return (new Fire(*this));
 }
 
-void Ice::use(ICharacter &target)
+void Fire::use(ICharacter &target)
 {
-    std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
+    std::cout << "* throws fire at " << target.getName() << " *" << std::endl;
 }

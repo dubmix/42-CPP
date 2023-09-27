@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Fire.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/12 10:34:00 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/27 10:44:56 by pdelanno         ###   ########.fr       */
+/*   Created: 2023/09/27 10:13:55 by pdelanno          #+#    #+#             */
+/*   Updated: 2023/09/27 10:14:18 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
+#ifndef FIRE_HPP
 
-# define CAT_HPP
+# define FIRE_HPP
 
-# include "Animal.hpp"
+# include "AMateria.hpp"
 
-class Cat: public Animal
+class Fire: public AMateria
 {
     public:
-            Cat();
-            Cat(Cat const &src);
-            ~Cat();
+            Fire();
+            Fire(Fire const &src);
+            ~Fire();
 
-            Cat &operator=(Cat const &src);
+            Fire &operator=(Fire const &src);
 
-            void makeSound() const;
+            virtual AMateria *clone() const;
+            virtual void use(ICharacter &target);
 };
 
 #endif

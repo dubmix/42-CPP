@@ -6,19 +6,19 @@
 #    By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/12 09:26:57 by pdelanno          #+#    #+#              #
-#    Updated: 2023/09/13 09:00:58 by pdelanno         ###   ########.fr        #
+#    Updated: 2023/09/27 10:25:35 by pdelanno         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = main.cpp
+SRC = main.cpp AMateria.cpp Character.cpp Fire.cpp Cure.cpp Ice.cpp MateriaSource.cpp
 
 OBJS = $(SRC:.cpp=.o)
 
 CPPFLAGS = -Wall -Werror -Wextra -std=c++98
 
-COMP = g++
+COMP = c++
 
-NAME = animals
+NAME = materia
 
 all: $(NAME)
 

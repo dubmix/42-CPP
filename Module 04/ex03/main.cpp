@@ -6,33 +6,54 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 08:53:08 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/13 09:25:23 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/09/27 10:33:01 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include
+#include "MateriaSource.hpp"
+#include "Character.hpp"
+#include "Cure.hpp"
+#include "Ice.hpp"
+#include "Fire.hpp"
 
 int main()
 {
     IMateriaSource *src = new MateriaSource();
+    std::cout << std::endl;
     src->learnMateria(new Ice());
+    std::cout << std::endl;
     src->learnMateria(new Cure());
+    std::cout << std::endl;
+    src->learnMateria(new Fire());
+    std::cout << std::endl;
 
-    ICharacter *me = new Character("P");
+    ICharacter *randomDude = new Character("random dude");
+    std::cout << std::endl;
 
     AMateria *tmp;
     tmp = src->createMateria("ice");
-    me->equip(tmp);
+    randomDude->equip(tmp);
     tmp = src->createMateria("cure");
-    me->equip(tmp);
+    randomDude->equip(tmp);
+    tmp = src->createMateria("fire");
+    randomDude->equip(tmp);
+    std::cout << std::endl;
 
     ICharacter *bob = new Character("Bob");
+    std::cout << std::endl;
 
-    me->use(0, *bob);
-    me->use(1, *bob);
+    randomDude->use(0, *bob);
+    randomDude->use(1, *bob);
+    randomDude->use(2, *bob);
+    std::cout << std::endl;
+
+    randomDude->unequip(1);
+    std::cout << std::endl;
 
     delete bob;
-    delete me;
+    std::cout << std::endl;
+    delete randomDude;
+    std::cout << std::endl;
     delete src;
 
     return (0);

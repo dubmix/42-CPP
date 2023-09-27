@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 07:12:15 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/13 07:14:03 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/09/27 12:00:03 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ class Dog: public Animal
 {
     public:
             Dog();
-            Dog(Dog const &copy);
+            Dog(Dog const &src);
             ~Dog();
 
-            Dog &operator=(Dog const &copy);
+            Dog &operator=(Dog const &src);
 
             void makeSound() const;
 };

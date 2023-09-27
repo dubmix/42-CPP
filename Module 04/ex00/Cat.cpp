@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 10:33:35 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/12 11:30:50 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/09/27 10:44:20 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,16 @@ Cat::Cat(): Animal()
     std::cout << "Default Cat constructor called" << std::endl;
 }
 
-Cat::Cat(Cat const &copy): Animal(copy)
+Cat::Cat(Cat const &src): Animal(src)
 {
-    *this = copy;
+    this->type = src.type;
 }
 
-Cat &Cat::operator=(Cat const &copy)
+Cat &Cat::operator=(Cat const &src)
 {
-    this->type = copy.type;
+    if (this == &src)
+        return (*this);
+    this->type = src.type;
     return (*this);
 }
 

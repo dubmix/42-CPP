@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 07:14:53 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/27 07:57:02 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/09/27 09:52:46 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,11 @@ Character &Character::operator=(Character const &src)
 Character::~Character()
 {
     std::cout << "Character " << this->_name << " was destroyed" << std::endl;
-    // free allocated memory?
+    for (int i = 0; i < 4; i++)
+    {
+        if (this->_inventory[i])
+            delete (this->_inventory[i]);
+    }
 }
 
 std::string const &Character::getName() const
@@ -79,6 +83,11 @@ void Character::unequip(int idx)
 
 void Character::use(int idx, ICharacter &target)
 {
+    if (idx < 0 || idx > 3)
+    {
+        std::cout << "Error: unvalid index";
+        return ;
+    }
     if (this->_inventory[idx])
     {
         std::cout << "Character " << this->_name << " uses ";

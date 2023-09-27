@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 08:09:32 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/27 08:22:37 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/09/27 10:04:25 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Cure::Cure(): AMateria("cure")
 {
-    
+    std::cout << "Default cure constructor called" << std::endl;
 }
 
 Cure::Cure(Cure const &src): AMateria("cure")
@@ -28,11 +28,12 @@ Cure &Cure::operator=(Cure const &src)
     if (this == &src)
         return (*this);
     this->_type = src._type;
+    return (*this);
 }
 
 Cure::~Cure()
 {
-    
+    std::cout << "Cure destructor called" << std::endl;
 }
 
 AMateria *Cure::clone() const

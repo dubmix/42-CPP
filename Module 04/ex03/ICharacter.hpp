@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 09:02:41 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/13 09:24:56 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/09/27 10:31:03 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 # define ICHARACTER_HPP
 
 # include <iostream>
+# include "AMateria.hpp"
+
+class AMateria; //need class declaration
 
 class ICharacter
 {
