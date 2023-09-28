@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 09:27:38 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/13 07:44:31 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/09/28 06:56:33 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ class Animal
 {
     public:
             Animal();
-            Animal(Animal const &copy);
+            Animal(Animal const &src);
             virtual ~Animal(void);
             
-            Animal &operator=(Animal const &copy);
+            Animal &operator=(Animal const &src);
             
             virtual void makeSound() const;
             virtual std::string getType() const;

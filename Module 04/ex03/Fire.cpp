@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 10:11:52 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/27 10:25:18 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/09/28 07:31:56 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Fire::Fire(): AMateria("fire")
 {
-    std::cout << "Default Fire constructor called" << std::endl;
+    std::cout << "Default fire constructor called" << std::endl;
 }
 
 Fire::Fire(Fire const &src): AMateria("Fire")

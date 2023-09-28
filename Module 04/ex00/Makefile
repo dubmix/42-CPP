@@ -6,7 +6,7 @@
 #    By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/12 09:26:57 by pdelanno          #+#    #+#              #
-#    Updated: 2023/09/13 07:21:10 by pdelanno         ###   ########.fr        #
+#    Updated: 2023/09/28 06:55:43 by pdelanno         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ OBJS = $(SRC:.cpp=.o)
 
 CPPFLAGS = -Wall -Werror -Wextra -std=c++98
 
-COMP = g++
+COMP = c++
 
 NAME = animals
 

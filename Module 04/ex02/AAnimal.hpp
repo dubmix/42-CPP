@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   AAnimal.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 09:27:38 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/13 08:41:53 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/09/28 07:20:16 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
+#ifndef AANIMAL_HPP
 
-# define ANIMAL_HPP
+# define AANIMAL_HPP
 
 # include <iostream>
 # include <string>
 # include "Brain.hpp"
 
-class Animal
+class AAnimal
 {
     public:
-            Animal();
-            Animal(Animal const &copy);
-            virtual ~Animal(void);
+            AAnimal();
+            AAnimal(AAnimal const &src);
+            virtual ~AAnimal(void);
             
-            Animal &operator=(Animal const &copy);
+            AAnimal &operator=(AAnimal const &src);
             
             virtual void makeSound() const = 0;
+            // instantiable = an instance of that object can be created
             virtual std::string getType() const;
 
     protected:

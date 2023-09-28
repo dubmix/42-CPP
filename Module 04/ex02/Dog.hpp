@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 07:12:15 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/13 08:10:55 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/09/28 07:25:53 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 # define DOG_HPP
 
-# include "Animal.hpp"
+# include "AAnimal.hpp"
 
-class Dog: public Animal
+class Dog: public AAnimal
 {
     public:
             Dog();
-            Dog(Dog const &copy);
+            Dog(Dog const &src);
             ~Dog();
 
-            Dog &operator=(Dog const &copy);
+            Dog &operator=(Dog const &src);
 
             void makeSound() const;
             Brain *getBrain() const;

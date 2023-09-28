@@ -1,45 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   AAnimal.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 09:32:45 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/12 11:17:41 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/09/28 07:21:30 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 
-Animal::Animal(): type("Animal")
+AAnimal::AAnimal(): type("Animal")
 {
     std::cout << "Default Animal constructor called" << std::endl;
 }
 
-Animal::~Animal()
+AAnimal::~AAnimal()
 {
     std::cout << "Animal destructor called" << std::endl;
 }
 
-Animal::Animal(Animal const &copy)
+AAnimal::AAnimal(AAnimal const &src)
 {
-    std::cout << "Animal copy called" << std::endl;
-    *this = copy;
+    std::cout << "Animal copy constructor called" << std::endl;
+    this->type = src.type;
 }
 
-Animal &Animal::operator=(Animal const &copy)
+AAnimal &AAnimal::operator=(AAnimal const &src)
 {
-    this->type = copy.type;
+    if (this == &src)
+        return (*this);
+    this->type = src.type;
     return (*this);
 }
 
-void Animal::makeSound() const
+void AAnimal::makeSound() const
 {
     std::cout << "????" << std::endl;
 }
 
-std::string Animal::getType() const
+std::string AAnimal::getType() const
 {
     return(type);
 }

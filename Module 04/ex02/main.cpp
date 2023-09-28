@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 09:22:00 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/13 08:42:43 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/09/28 07:23:25 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 int main()
 {
-    //const Animal *meta = new Animal();
-    const Animal *i = new Dog();
-    const Animal *j = new Cat();
+    //const AAnimal *meta = new AAnimal();
+    const AAnimal *i = new Dog();
+    const AAnimal *j = new Cat();
     
     std::cout << std::endl;
     std::cout << i->getType() << " " << std::endl;

@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 07:27:42 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/13 08:07:10 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/09/28 07:06:36 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,16 @@
 # define BRAIN_HPP
 
 # include <iostream>
+# include <string>
 
 class Brain
 {
     public:
             Brain();
-            Brain(Brain const &copy);
+            Brain(Brain const &src);
             ~Brain();
 
-            Brain &operator=(Brain const &copy);
+            Brain &operator=(Brain const &src);
 
             std::string getIdeas(int index) const;
     

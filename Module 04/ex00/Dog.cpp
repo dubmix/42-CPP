@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 07:10:57 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/27 12:01:05 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/09/28 07:29:28 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,5 @@ void Dog::makeSound() const
 
 Dog::~Dog()
 {
-    std::cout <<"Dog destructor called" << std::endl;
+    std::cout << "Dog destructor called" << std::endl;
 }

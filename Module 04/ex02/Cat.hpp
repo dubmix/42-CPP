@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 10:34:00 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/13 08:10:46 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/09/28 07:26:01 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 # define CAT_HPP
 
-# include "Animal.hpp"
+# include "AAnimal.hpp"
 
-class Cat: public Animal
+class Cat: public AAnimal
 {
     public:
             Cat();
-            Cat(Cat const &copy);
+            Cat(Cat const &src);
             ~Cat();
 
-            Cat &operator=(Cat const &copy);
+            Cat &operator=(Cat const &src);
 
             void makeSound() const;
             Brain *getBrain() const;

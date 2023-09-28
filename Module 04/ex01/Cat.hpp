@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 10:34:00 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/13 08:10:46 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/09/28 07:00:06 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ class Cat: public Animal
 {
     public:
             Cat();
-            Cat(Cat const &copy);
+            Cat(Cat const &src);
             ~Cat();
 
-            Cat &operator=(Cat const &copy);
+            Cat &operator=(Cat const &src);
 
             void makeSound() const;
             Brain *getBrain() const;

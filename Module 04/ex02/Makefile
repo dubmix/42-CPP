@@ -6,17 +6,17 @@
 #    By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/12 09:26:57 by pdelanno          #+#    #+#              #
-#    Updated: 2023/09/13 07:59:25 by pdelanno         ###   ########.fr        #
+#    Updated: 2023/09/28 07:38:20 by pdelanno         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = main.cpp Animal.cpp Cat.cpp Dog.cpp Brain.cpp
+SRC = main.cpp AAnimal.cpp Cat.cpp Dog.cpp Brain.cpp
 
 OBJS = $(SRC:.cpp=.o)
 
 CPPFLAGS = -Wall -Werror -Wextra -std=c++98
 
-COMP = g++
+COMP = c++
 
 NAME = animals
 
