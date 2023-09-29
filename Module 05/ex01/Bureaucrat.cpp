@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 08:07:04 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/28 18:00:24 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/09/29 11:43:07 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,18 +77,16 @@ void Bureaucrat::decrementGrade()
     this->_grade += 1;
 }
 
-void signForm(Form &f)
+void Bureaucrat::signForm(Form &f) // one layer down of try catch
 {
-    if (f.getSignedStatus() == 1)
-    {
-        std::cout << this->_name << " signed ";
+    try {
+        f.beSigned(*this); // deref for passing the actual bureaucrat object
+        std::cout << *this << " signed ";
         std::cout << f.getName() << std::endl;
     }
-    else
-    {
+    catch (Form::GradeTooLowException &e) {
         std::cout << this->_name << " couldn't sign ";
         std::cout << f.getName() << " because ";
-        std::cout << "grade too low" << std::endl;
+        std::cout << e.what() << std::endl;
     }
-    
 }

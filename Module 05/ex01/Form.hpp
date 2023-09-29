@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 16:30:58 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/28 17:36:21 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/09/29 10:00:23 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 
 # include <iostream>
 # include "Bureaucrat.hpp"
+
+class Bureaucrat;
 
 class Form
 {
@@ -27,7 +29,7 @@ class Form
 
     public:
             Form();
-            Form(int signLevel, int execLevel);
+            Form(std::string name, int signLevel, int execLevel);
             Form(Form const &src);
             ~Form();
 
@@ -35,8 +37,8 @@ class Form
 
             std::string const   getName();
             bool                getSignedStatus();
-            int const           getSignLevel();
-            int const           getExecLevel();
+            int                 getSignLevel() const;
+            int                 getExecLevel() const;
             void                beSigned(Bureaucrat &b);
     
             class GradeTooHighException: public std::exception
@@ -50,7 +52,7 @@ class Form
             {
                 public:
                         virtual const char* what()
-                        {return ("Grade too low");}
+                        {return ("grade too low!");}
             };
 };
 

@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 08:19:07 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/28 14:40:52 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/09/29 10:40:17 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main(void)
 {
-    //Bureaucrat a("Ursula", 1); // outside of try block for scope
+    Bureaucrat a("Ursula", 1); // outside of try block for scope
     Bureaucrat b("Klaus", 150);
     Bureaucrat c("Wolfgang", 60);
     std::cout << std::endl;
@@ -22,7 +22,7 @@ int main(void)
     c.incrementGrade();
     
     try {
-        Bureaucrat a("Ursula", 1);
+        //Bureaucrat a("Ursula", 0);
 
         std::cout << a << std::endl;
         a.incrementGrade(); // propagating up the call stack
@@ -35,6 +35,9 @@ int main(void)
         std::cout << e.what() << std::endl;
         std::cout << std::endl;
     }
+
+    //std::cout << ">>> " << a << std::endl;
+    //std::cout << std::endl;
 
     try {
         std::cout << b << std::endl;

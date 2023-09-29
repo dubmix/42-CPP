@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 08:07:17 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/28 17:53:10 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/09/29 09:24:53 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 
 # include "iostream"
 # include "Form.hpp"
+
+class Form;
 
 class Bureaucrat
 {

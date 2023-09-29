@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 08:07:17 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/28 14:10:20 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/09/29 08:15:13 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Bureaucrat
 
     public:
             Bureaucrat();
-            Bureaucrat(std::string name, int grade);
+            Bureaucrat(std::string name, int grade); // should be &name
             Bureaucrat(Bureaucrat const &src);
             ~Bureaucrat();
 
