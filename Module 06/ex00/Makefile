@@ -6,11 +6,11 @@
 #    By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/30 14:39:48 by pdelanno          #+#    #+#              #
-#    Updated: 2023/09/30 14:40:36 by pdelanno         ###   ########.fr        #
+#    Updated: 2023/10/01 11:33:54 by pdelanno         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = main.cpp ScalarConverter.cpp
+SRC = main.cpp ScalarConverter.cpp Exceptions.cpp Print.cpp
 
 OBJS = $(SRC:.cpp=.o)
 
@@ -18,7 +18,7 @@ CPPFLAGS = -Wall -Werror -Wextra -std=c++98
 
 COMP = c++
 
-NAME = converter
+NAME = convert
 
 all: $(NAME)
 

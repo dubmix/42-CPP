@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/30 14:55:45 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/30 15:17:02 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/10/01 07:39:05 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,5 @@ int main(int argc, char *argv[])
 
     ScalarConverter sc;
 
-    try {
-        
-    }
-    catch (const std::exception &e)
-    {
-        std::cout << "Error: " << e.what() << std::endl;
-    }
+    sc.convert(argv[1]);
 }
