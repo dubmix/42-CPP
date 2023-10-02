@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 15:58:15 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/23 07:51:43 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/10/02 08:36:22 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ ScavTrap::ScavTrap()
 {
     std::cout << "Default ScavTrap constructor called" << std::endl;
     this->_attackDamage = 20;
+    this->_energyPoints = 33;
 }
 
 ScavTrap::ScavTrap(std::string const &name): ClapTrap(name)

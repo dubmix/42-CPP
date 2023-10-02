@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 08:39:12 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/23 08:17:03 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/10/02 08:59:02 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,12 @@ class FragTrap: virtual public ClapTrap // virtual inheritance
 
             void    attack(std::string const &target);
             void    highFivesGuys(void);
+            
+    protected:
+            std::string _name;
+            int _hitPoints;
+            int _energyPoints;
+            int _attackDamage;
 };
 
 #endif

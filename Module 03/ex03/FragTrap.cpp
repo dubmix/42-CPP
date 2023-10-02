@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 08:39:08 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/23 08:13:19 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/10/02 08:36:13 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ FragTrap::FragTrap()
 {
     std::cout << "Default FragTrap constructor called" << std::endl;
     this->_attackDamage = 30;
+    this->_energyPoints = 77;
 }
 
 FragTrap::FragTrap(std::string const &name): ClapTrap(name)

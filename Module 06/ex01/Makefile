@@ -6,11 +6,11 @@
 #    By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/30 14:39:48 by pdelanno          #+#    #+#              #
-#    Updated: 2023/10/02 11:34:27 by pdelanno         ###   ########.fr        #
+#    Updated: 2023/10/02 07:19:54 by pdelanno         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = main.cpp ScalarConverter.cpp Convert.cpp Print.cpp
+SRC = main.cpp Serializer.cpp
 
 OBJS = $(SRC:.cpp=.o)
 
@@ -18,7 +18,7 @@ CPPFLAGS = -Wall -Werror -Wextra -std=c++98
 
 COMP = c++
 
-NAME = convert
+NAME = serializer
 
 all: $(NAME)
 

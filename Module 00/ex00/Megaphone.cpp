@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   Megaphone.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pdelanno <pdelanno@student.42berlin.d      +#+  +:+       +#+        */
+/*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 14:24:26 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/08/16 14:51:06 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/10/01 17:19:52 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	main(int argc, char **argv)
 		i = 0;
 		while (argv[j][i] && j != 0)
 		{
-			std::cout << (char)std::toupper(argv[j][i]);
+			std::cout << (char)toupper(argv[j][i]);
 			i++;
 		}
 		j++;

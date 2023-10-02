@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 15:44:04 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/23 07:51:52 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/10/02 08:59:14 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,12 @@ class ScavTrap: virtual public ClapTrap
 
             void    attack(std::string const &target);
             void    guardGate(void);
+
+    protected:
+            std::string _name;
+            int _hitPoints;
+            int _energyPoints;
+            int _attackDamage;
 };
 
 #endif

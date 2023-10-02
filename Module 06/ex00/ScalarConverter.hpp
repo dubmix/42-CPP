@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/30 14:42:59 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/10/01 11:17:27 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/10/02 11:39:39 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,60 +21,38 @@
 class ScalarConverter
 {
     private:
-            std::string _str;
-            char _c;
-            int _n;
-            float _f;
-            double _d;
-    
-    public:
+            static std::string _str;
+            static char _c;
+            static int _n;
+            static float _f;
+            static double _d;
+            
             ScalarConverter();
             ScalarConverter(ScalarConverter const &src);
             ~ScalarConverter();
-
+    
             ScalarConverter &operator=(ScalarConverter const &src);
-
-            void    convert(std::string argv);
-
-            bool    isChar(std::string argv);
-            bool    isInt(std::string argv);
-            bool    isFloat(std::string argv);
-            bool    isDouble(std::string argv);
-            bool    isLiteral(std::string argv);
-
-            std::string    printChar(char c);
-            std::string    printInt(int n);
-            std::string    printFloat(float f);
-            std::string    printDouble(double d);
-
-            char    getChar();
-            int     getInt();
-            float   getFloat();
-            double  getDouble();
             
-            class CharConvert: public std::exception
-            {
-                public:
-                        void convert(ScalarConverter &sc);
-            };
+    public:
+            static void    convert(std::string argv);
+            
+            static bool    isChar(std::string argv);
+            static bool    isInt(std::string argv);
+            static bool    isFloat(std::string argv);
+            static bool    isDouble(std::string argv);
+            static bool    isLiteral(std::string argv);
 
-            class IntConvert: public std::exception
-            {
-                public:
-                        void convert(ScalarConverter &sc);
-            };
+            static std::string    printChar();
+            static std::string    printInt();
+            static std::string    printFloat();
+            static std::string    printDouble();
 
-            class FloatConvert: public std::exception
-            {
-                public:
-                        void convert(ScalarConverter &sc);
-            };
+            static void    charConvert();
+            static void    intConvert();
+            static void    floatConvert();
+            static void    doubleConvert();
 
-            class DoubleConvert: public std::exception
-            {
-                public:
-                        void convert(ScalarConverter &sc);
-            };
+            static void    printConversion();
 
             class Impossible: public std::exception
             {
@@ -83,7 +61,5 @@ class ScalarConverter
                         {return ("Conversion impossible");}
             };
 };
-
-std::ostream &operator<<(std::ostream &str, ScalarConverter &sc);
 
 #endif
