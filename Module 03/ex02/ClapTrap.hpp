@@ -28,6 +28,7 @@ class ClapTrap
         
         virtual void attack(std::string const &target); // this function is meant to be
         // overriden by derived classes, it can therefore have the exact same name and arguments
+        // update: virtual keyword not necessary!
         void takeDamage(unsigned int amount);
         void beRepaired(unsigned int amount);
         
