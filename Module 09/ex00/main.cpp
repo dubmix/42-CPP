@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 07:04:03 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/10/09 09:02:58 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/10/11 08:08:38 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,34 +17,32 @@ int main(int argc, char *argv[])
     BitcoinExchange data("data.csv");
     std::string     line;
     std::string     date;
-    float           value;
+    float           value = 0.0f;
 
-    if (argc != 2)
+    if (argc > 2)
     {
         std::cout << "Usage: .btc [input.txt]" << std::endl;
         return (1);
     }
-    // (void)argc;
-    // (void)argv;
-    // std::cout << data.getExchangeRate("2022-03-25", 1) << std::endl;
     std::ifstream file(argv[1]);
     if (!file.is_open())
     {
         std::cout << "Error: could not open file" << std::endl;
         return (1);
     }
+    std::getline(file, line);
     while (std::getline(file, line))
     {
         std::stringstream linestream(line);
-        linestream >> value;
-        if (std::getline(linestream, date, '|'))
+        if (std::getline(linestream, date, '|') && linestream >> value)
         {
+            date.erase(std::remove_if(date.begin(), date.end(), ::isspace), date.end());
             try {
                 float exchangeRate = data.getExchangeRate(date, value);
-                float result = exchangeRate;
+                float result = exchangeRate * value;
                 std::cout << date << " => " << value << " = " << result << std::endl;
             }
-            catch(std::exception const &e) {
+            catch (BitcoinExchange::Error const &e) {
                 std::cout << e.what() << std::endl;
             }
         }
