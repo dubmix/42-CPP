@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 07:03:46 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/10/11 07:03:55 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/10/11 08:32:42 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ class BitcoinExchange
                 public:
                         Error(std::string const &msg): _msg(msg) {}
                         virtual const char *what() const throw()
-                                {return(_msg.c_str());}
+                            {return(_msg.c_str());}
                         virtual ~Error() throw() {}
             };
 };
