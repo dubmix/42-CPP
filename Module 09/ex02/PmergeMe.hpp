@@ -1,44 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RPN.hpp                                            :+:      :+:    :+:   */
+/*   PmergeMe.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/11 08:14:08 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/10/13 07:30:39 by pdelanno         ###   ########.fr       */
+/*   Created: 2023/10/13 07:09:02 by pdelanno          #+#    #+#             */
+/*   Updated: 2023/10/13 08:41:33 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RPN_HPP
+#ifndef PMERGEME_HPP
 
-# define RPN_HPP
+# define PMERGEME_HPP
 
 # include <iostream>
-# include <sstream>
-# include <stack>
 # include <stdlib.h>
+# include <vector>
+# include <deque>
+# include <set>
 
-class RPN
+class PmergeMe
 {
     private:
-            int _result;
-            std::stack<int> _stack;
-
+            std::vector<int>    _vector;
+            //std::deque<int>     _deque;
+            
+            int                 _size;
+            bool                _isSorted;
+            
     public:
-            RPN();
-            RPN(RPN const &src);
-            ~RPN();
+            PmergeMe();
+            PmergeMe(int argc, char *argv[]);
+            PmergeMe(PmergeMe const &src);
+            virtual ~PmergeMe();
 
-            RPN &operator=(RPN const &src);
+            PmergeMe &operator=(PmergeMe const &src);
 
-            void process(std::string const &str);
-            void calculate(int n1, int n2, char c);
+            void printSeq();
+            std::vector<int> parseArgsVector(int argc, char *argv[]);
 
-            int getResult();
-    
-        class Error: public std::exception
-        {
+            // template <typename T>
+            // void FordJohnson(T &container);
+            
+            class Error: public std::exception
+            {
                 private:
                         std::string _msg;
                 public:
@@ -46,7 +52,8 @@ class RPN
                         virtual const char *what() const throw()
                         {return(_msg.c_str());}
                         virtual ~Error() throw() {}
-        };
+            };
+    
 };
 
 #endif
