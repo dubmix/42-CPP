@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 09:27:38 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/27 10:42:50 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/10/14 13:02:40 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Animal
     public:
             Animal();
             Animal(Animal const &src);
-            virtual ~Animal(void);
+            virtual ~Animal();
             
             Animal &operator=(Animal const &src);
             

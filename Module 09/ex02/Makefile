@@ -6,11 +6,11 @@
 #    By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/30 14:39:48 by pdelanno          #+#    #+#              #
-#    Updated: 2023/10/13 08:40:27 by pdelanno         ###   ########.fr        #
+#    Updated: 2023/10/14 14:44:36 by pdelanno         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = main.cpp PmergeMe.cpp
+SRC = main.cpp Time.cpp PmergeMe.cpp 
 
 OBJS = $(SRC:.cpp=.o)
 
