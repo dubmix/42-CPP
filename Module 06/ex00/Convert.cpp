@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 09:08:33 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/10/02 11:37:31 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/10/16 18:51:59 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ void ScalarConverter::floatConvert()
     _f = std::atof(_str.c_str());
     _d = static_cast<double>(_f);
     _c = static_cast<char>(_f);
+    if (std::atol(_str.c_str()) < INT_MIN || std::atol(_str.c_str()) > INT_MAX)
+        return ;
     _n = static_cast<int>(_f);
 }
 
@@ -44,6 +46,8 @@ void ScalarConverter::doubleConvert()
 {
     _d = std::strtod(_str.c_str(), NULL);
     _c = static_cast<char>(_d);
-    _n = static_cast<int>(_d);
     _f = static_cast<float>(_d);
+    if (std::atol(_str.c_str()) < INT_MIN || std::atol(_str.c_str()) > INT_MAX)
+        return ;
+    _n = static_cast<int>(_d);
 }

@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 06:56:51 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/10/02 09:09:37 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/10/16 14:53:57 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Serializer::~Serializer() {}
 
 Serializer::Serializer(Serializer const &src) {(void)src;}
 
-//Serializer &
+Serializer &Serializer::operator=(Serializer const &src) {(void)src; return (*this);}
 
 uintptr_t Serializer::serialize(Data *data) {return (reinterpret_cast<uintptr_t>(data));}
 

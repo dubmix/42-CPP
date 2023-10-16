@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 08:19:07 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/30 10:12:02 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/10/16 07:49:42 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,15 +29,15 @@ int main(void)
         a.signForm(f3);
         a.executeForm(f3);
     }
-    catch (AForm::NotSignedException &e)
+    catch (AForm::NotSignedException const &e)
     {
         std::cout << e.what() << std::endl;
     }
-    catch (AForm::GradeTooLowException &e)
+    catch (AForm::GradeTooLowException const &e)
     {
         std::cout << e.what() << std::endl;
     }
-    catch (AForm::GradeTooHighException &e)
+    catch (AForm::GradeTooHighException const &e)
     {
         std::cout << e.what() << std::endl;
     }

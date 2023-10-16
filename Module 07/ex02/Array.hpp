@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 06:54:52 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/10/05 08:50:19 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/10/16 16:11:52 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ class Array
                         virtual const char *what() const throw()
                         {return ("Index is out of bounds");}
             };
-    
 };
 
 template <typename T>

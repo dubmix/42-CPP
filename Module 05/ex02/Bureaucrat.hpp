@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 08:07:17 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/30 09:24:21 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/10/16 15:50:33 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@ class AForm;
 class Bureaucrat
 {
     private:
-            std::string _name;
+            std::string const _name;
             int _grade;
 
     public:
             Bureaucrat();
-            Bureaucrat(std::string name, int grade);
+            Bureaucrat(std::string const name, int grade);
             Bureaucrat(Bureaucrat const &src);
             ~Bureaucrat();
 
@@ -44,14 +44,14 @@ class Bureaucrat
             class GradeTooHighException: public std::exception
             {
                 public:
-                        virtual const char* what() // using what() for convention, it returns a char *
+                        virtual const char* what() const throw()
                         {return ("Grade too high");}
             };
             
             class GradeTooLowException: public std::exception
             {
                 public:
-                        virtual const char* what()
+                        virtual const char* what() const throw()
                         {return ("Grade too low");}
             };
 };

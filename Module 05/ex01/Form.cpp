@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 16:30:52 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/29 10:53:29 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/10/16 15:46:50 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,9 @@ _signLevel(signLevel), _execLevel(execLevel)
         throw Form::GradeTooLowException();
 }
 
-Form::Form(Form const &src): _signLevel(src._signLevel), _execLevel(src._execLevel)
+Form::Form(Form const &src): _name(src._name), _signLevel(src._signLevel), _execLevel(src._execLevel)
 {
+    std::cout << "Copy constructor called" << std::endl;
     this->_sign3d = src._sign3d;
 }
 
@@ -49,8 +50,6 @@ Form &Form::operator=(Form const &src)
 {
     if (this == &src)
         return (*this);
-    // this->_signLevel = src._signLevel;
-    // this->_execLevel = src._execLevel;
     this->_sign3d = src._sign3d;
     return (*this);
 }

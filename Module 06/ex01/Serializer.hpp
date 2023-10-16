@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 06:56:54 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/10/02 09:07:22 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/10/16 14:52:27 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ class Serializer
             Serializer(Serializer const &src);
             ~Serializer();
 
-            //Serializer &operator=(Serializer const &src);
+            Serializer &operator=(Serializer const &src);
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 08:07:04 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/28 14:16:56 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/10/16 15:47:46 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,9 @@ Bureaucrat::~Bureaucrat()
     std::cout << "Bureaucrat " << this->_name << " destructor called" << std::endl;
 }
 
-Bureaucrat::Bureaucrat(Bureaucrat const &src)
+Bureaucrat::Bureaucrat(Bureaucrat const &src): _name(src._name)
 {
     this->_grade = src._grade;
-    this->_name = src._name;
 }
 
 Bureaucrat &Bureaucrat::operator=(Bureaucrat const &src)
@@ -49,7 +48,6 @@ Bureaucrat &Bureaucrat::operator=(Bureaucrat const &src)
     if (this == &src)
         return (*this);
     this->_grade = src._grade;
-    this->_name = src._name;
     return (*this);
 }
 

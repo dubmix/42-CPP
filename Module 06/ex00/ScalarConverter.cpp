@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/30 14:59:34 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/10/02 11:38:05 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/10/16 18:52:28 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ bool ScalarConverter::isInt(std::string argv)
     for (int i = j; i < static_cast<int>(argv.length()); i++)
         if (std::isdigit(argv[i]) == 0)
             return (0);
+    if (std::atol(_str.c_str()) < INT_MIN || std::atol(_str.c_str()) > INT_MAX)
+        return (0);
     _str = argv;
     return (1);
 }

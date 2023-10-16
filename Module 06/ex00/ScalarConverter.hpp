@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/30 14:42:59 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/10/02 11:39:39 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/10/16 14:28:09 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ class ScalarConverter
             class Impossible: public std::exception
             {
                 public:
-                        virtual const char *what()
+                        virtual const char *what() const throw()
                         {return ("Conversion impossible");}
             };
 };

@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 08:07:04 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/30 11:31:04 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/10/16 15:54:03 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,9 @@ Bureaucrat::~Bureaucrat()
     std::cout << "Bureaucrat " << this->_name << " destructor called" << std::endl;
 }
 
-Bureaucrat::Bureaucrat(Bureaucrat const &src)
+Bureaucrat::Bureaucrat(Bureaucrat const &src): _name(src._name)
 {
     this->_grade = src._grade;
-    this->_name = src._name;
 }
 
 Bureaucrat &Bureaucrat::operator=(Bureaucrat const &src)
@@ -49,7 +48,6 @@ Bureaucrat &Bureaucrat::operator=(Bureaucrat const &src)
     if (this == &src)
         return (*this);
     this->_grade = src._grade;
-    this->_name = src._name;
     return (*this);
 }
 
@@ -84,12 +82,7 @@ void Bureaucrat::signForm(AForm &f)
         std::cout << *this << " signed ";
         std::cout << f.getName() << std::endl;
     }
-    catch (AForm::GradeTooLowException &e) {
-        std::cout << this->_name << " couldn't sign ";
-        std::cout << ">>" << f.getName() << "<< because ";
-        std::cout << e.what() << std::endl;
-    }
-    catch (AForm::FormAlreadySigned &e) {
+    catch (std::exception const &e) {
         std::cout << this->_name << " couldn't sign ";
         std::cout << ">>" << f.getName() << "<< because ";
         std::cout << e.what() << std::endl;
@@ -101,12 +94,7 @@ void Bureaucrat::executeForm(AForm const &f) const
     try {
         f.execute(*this);
     }
-    catch (AForm::NotSignedException &e)
-    {
-        std::cout << this->_name << " couldn't execute ";
-        std::cout << ">>" << f.getName() << "<< because " << e.what() << std::endl;
-    }
-    catch (AForm::GradeTooLowException &e)
+    catch (std::exception const &e)
     {
         std::cout << this->_name << " couldn't execute ";
         std::cout << ">>" << f.getName() << "<< because " << e.what() << std::endl;

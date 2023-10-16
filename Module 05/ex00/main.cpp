@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 08:19:07 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/29 10:40:17 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/10/16 07:23:08 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@ int main(void)
         std::cout << a << std::endl;
         a.incrementGrade(); // propagating up the call stack
     }
-    catch (Bureaucrat::GradeTooHighException &e) { // CONST for convention???
+    catch (Bureaucrat::GradeTooHighException const &e) {
         std::cout << e.what() << std::endl;
         std::cout << std::endl;
     }
-    catch (Bureaucrat::GradeTooLowException &e) {
+    catch (Bureaucrat::GradeTooLowException const &e) {
         std::cout << e.what() << std::endl;
         std::cout << std::endl;
     }

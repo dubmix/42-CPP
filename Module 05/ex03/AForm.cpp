@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 16:30:52 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/30 11:28:04 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/10/16 07:56:20 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,6 @@ AForm &AForm::operator=(AForm const &src)
 {
     if (this == &src)
         return (*this);
-    // this->_signLevel = src._signLevel;
-    // this->_execLevel = src._execLevel;
     this->_sign3d = src._sign3d;
     return (*this);
 }

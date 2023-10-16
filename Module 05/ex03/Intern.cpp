@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/30 10:15:38 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/30 11:41:29 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/10/16 08:00:46 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,10 @@ AForm *Intern::makeForm(std::string name, std::string target)
                 throw Intern::FormExists(i);
         throw Intern::InvalidForm();
     }
-    catch (Intern::FormExists &e)
+    catch (Intern::FormExists const &e)
     {
         int i = e.getIndex();
+        //switch
         if (i == 0)
             form = new RobotomyRequestForm(target);
         else if (i == 1)
@@ -52,10 +53,9 @@ AForm *Intern::makeForm(std::string name, std::string target)
         else if (i == 2)
             form = new ShrubberyCreationForm(target);
     }
-    catch (Intern::InvalidForm &e)
+    catch (Intern::InvalidForm const &e)
     {
         std::cout << e.what() << std::endl;
     }
     return (form);
 }
-

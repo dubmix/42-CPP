@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 16:30:58 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/30 11:29:06 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/10/16 07:55:42 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,28 +49,28 @@ class AForm
             class GradeTooHighException: public std::exception
             {
                 public:
-                        virtual const char* what()
+                        virtual const char* what() const throw()
                         {return ("Grade too high");}
             };
             
             class GradeTooLowException: public std::exception
             {
                 public:
-                        virtual const char* what()
+                        virtual const char* what() const throw()
                         {return ("grade too low!");}
             };
 
             class NotSignedException: public std::exception
             {
                 public:
-                        virtual const char* what()
+                        virtual const char* what() const throw()
                         {return ("form not signed!");}
             };
 
             class FormAlreadySigned: public std::exception
             {
                 public:
-                        virtual const char* what()
+                        virtual const char* what() const throw()
                         {return ("form already signed!");}
             };
 };

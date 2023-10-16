@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/30 10:15:55 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/30 11:18:07 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/10/16 07:58:44 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ class Intern
             class InvalidForm: public std::exception
             {
                 public:
-                        virtual const char* what()
+                        virtual const char* what() const throw()
                         {return ("Form doesn't exist!");}
             };
 };

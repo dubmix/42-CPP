@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 08:19:07 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/09/29 10:57:00 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/10/16 07:41:47 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,17 +33,15 @@ int main(void)
     std::cout << "Status: " << form.getSignedStatus() << std::endl;
     std::cout << std::endl;
 
-    try{
+    try {
         Form fail("Will fail", 0, 150);
+        Form fail2(fail);
 
         std::cout << fail.getName() << std::endl;
+        std::cout << fail2.getExecLevel() << std::endl;
         std::cout << std::endl;
     }
-    catch (Form::GradeTooLowException &e) {
-        std::cout << e.what() << std::endl;
-        std::cout << std::endl;
-    }
-    catch (Form::GradeTooHighException &e) {
+    catch (std::exception const &e) {
         std::cout << e.what() << std::endl;
         std::cout << std::endl;
     }
