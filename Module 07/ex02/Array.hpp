@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 06:54:52 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/10/16 16:11:52 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/10/17 16:40:59 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ class Array
             Array &operator=(Array const &src);
             T &operator[](unsigned int i) const;
 
-            unsigned int getSize(void) const;
+            unsigned int size(void) const;
 
             class OutOfBoundsException: public std::exception
             {

@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 09:01:30 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/10/05 06:54:43 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/10/17 15:38:21 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <iostream>
 
 template <typename T>
-void iter(T *arr, unsigned int size, void (*f)(T &)) // function pointer called f that
+void iter(T *arr, unsigned int size, void (*f)(T &)) // function pointer called "f" that
                                                     // returns void and takes a ref to T as arg
 {
     for (unsigned int i = 0; i < size; i++)

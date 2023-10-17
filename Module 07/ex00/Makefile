@@ -6,7 +6,7 @@
 #    By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/30 14:39:48 by pdelanno          #+#    #+#              #
-#    Updated: 2023/10/03 07:57:51 by pdelanno         ###   ########.fr        #
+#    Updated: 2023/10/17 15:37:38 by pdelanno         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,14 +16,14 @@ OBJS = $(SRC:.cpp=.o)
 
 CPPFLAGS = -Wall -Werror -Wextra -std=c++98
 
-COMP = c++
+CXX = c++
 
 NAME = whatever
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-		@$(COMP) $(CPPFLAGS) -o $(NAME) $(OBJS)
+		@$(CXX) $(CPPFLAGS) -o $(NAME) $(OBJS)
 		@echo "\033[1;5mProgram is ready!\033[0m"
 clean:
 		@rm -f $(OBJS)

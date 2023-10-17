@@ -6,13 +6,13 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 06:56:44 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/10/05 08:58:39 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/10/17 16:41:42 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Array.hpp"
 
-#define MAX_VAL 1
+#define MAX_VAL 20
 
 int main(void)
 {

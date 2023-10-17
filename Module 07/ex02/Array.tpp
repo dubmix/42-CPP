@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 07:59:51 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/10/05 08:55:25 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/10/17 18:34:22 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,19 +19,15 @@ template <typename T>
 Array<T>::Array(unsigned int n): _arr(new T[n]), _size(n) {};
 
 template <typename T>
-Array<T>::Array(Array const &src): _arr(new T[src.getSize()]), _size(src.getSize())
-{
-    for (unsigned int i = 0; i < _size; i++)
-        _arr[i] = src._arr[i];
-}
+Array<T>::Array(Array const &src) {*this = src;} // overload operator also works here
 
 template <typename T>
 Array<T> &Array<T>::operator=(Array const &src) // maybe Array<T> as argument type
 {
-    if (*this == &src)
+    if (this == &src)
         return (*this);
-    _arr = new T[src.getSize()];
-    _size = src.getSize();
+    _arr = new T[src.size()];
+    _size = src.size();
     for (unsigned int i = 0; i < _size; i++)
         _arr[i] = src._arr[i];
     return (*this);
@@ -49,12 +45,12 @@ T &Array<T>::operator[](unsigned int i) const
 }
 
 template <typename T>
-unsigned int Array<T>::getSize() const {return (_size);}
+unsigned int Array<T>::size() const {return (_size);}
 
 template <typename T>
 std::ostream &operator<<(std::ostream &str, Array<T> const &arr)
 {
-    for (unsigned int i = 0; i < arr.getSize(); i++)
+    for (unsigned int i = 0; i < arr.size(); i++)
         str << arr[i] << " ";
     str << std::endl;
     return (str);
