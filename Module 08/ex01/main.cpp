@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 06:59:55 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/10/06 08:21:52 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/10/21 08:54:59 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,21 @@ int main(void)
     
     std::cout << std::endl;
 
-    // test with 10000
+    Span biglist = Span(12000);
+    std::srand(std::time(0));
+    std::list<int> l(12000);
+    for (std::list<int>::iterator it = l.begin(); it != l.end(); it++)
+    {
+        *it = static_cast<int>(rand());
+    }
+    try {
+        biglist.addALotOfNumbers(l.begin(), l.end());
+        std::cout << "Longest biglist span: " << biglist.longestSpan() << std::endl;
+        std::cout << "Shortest biglist span: " << biglist.shortestSpan() << std::endl;
+    }
+    catch (Span::OutOfRangeException &e) {
+        std::cout << e.what() << std::endl;
+    }
     
     return (0);
 }

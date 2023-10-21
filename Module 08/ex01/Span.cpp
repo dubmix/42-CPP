@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 06:44:22 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/10/06 08:06:31 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/10/21 08:45:33 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,13 @@ void Span::addNumber(int n)
     _list.push_back(n);
 }
 
+void Span::addALotOfNumbers(std::list<int>::iterator begin, std::list<int>::iterator end)
+{
+    if (static_cast<unsigned int>(_list.size() + std::distance(begin, end)) > _N)
+        throw OutOfRangeException("List is full");
+    _list.insert(_list.end(), begin, end);
+}
+
 int Span::longestSpan()
 {
     if (_list.size() < 2)
@@ -68,7 +75,7 @@ int Span::shortestSpan()
     return (min);
 }
 
-const std::list<int> *Span::getList() const {return (&_list);} // why does everything need to be const here
+const std::list<int> *Span::getList() const {return (&_list);}
 
 std::ostream &operator<<(std::ostream &str, Span const &s)
 {

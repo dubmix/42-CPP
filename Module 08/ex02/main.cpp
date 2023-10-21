@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 06:58:05 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/10/08 09:38:50 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/10/21 08:56:38 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,8 @@ int main()
         std::cout << *it << " ";
         ++it;
     }
-    
+
+    // for overload operators testing
     MutantStack<int> s(mstack);
     MutantStack<int> t = mstack;
     std::cout << "/ " << s.top() << " " << t.top() << std::endl;
@@ -56,7 +57,6 @@ int main()
     //-------------------------------------------//
 
     std::list<int> lst;
-    //std::stack<int, std::list<int> > li(lst);
 
     std::cout << "List container: " << std::endl;
 

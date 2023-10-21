@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 05:59:57 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/10/06 06:33:14 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/10/21 09:29:08 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,23 +22,24 @@ int main(int argc, char *argv[])
 
     int arr[] = {1, 2, 3, 4, 5};
     
-    std::list<int> list(arr, arr + sizeof(arr) / sizeof(int)); // initialized using iterators
+    std::list<int> list(arr, arr + sizeof(arr) / sizeof(int)); // initialized with pointers
+                                                                // and last values
     // can be traversed in both directions
     
     try {
-        easyfind(list, std::atoi(argv[1])); // not first argument type <T>
+        easyfind(list, std::atoi(argv[1]));
     }
-    catch (const std::exception &e) {
+    catch (std::exception const &e) {
         std::cout << e.what() << std::endl;
     }
 
     std::vector<int> vector(arr, arr + sizeof(arr) / sizeof(int));
-    // standard dynamic arrayes, can gorw and shrink in size
+    // standard dynamic arrays, can grow and shrink in size
 
     try {
         easyfind(vector, std::atoi(argv[1]));
     }
-    catch (const std::exception &e) {
+    catch (std::exception const &e) {
         std::cout << e.what() << std::endl;
     }
 
@@ -48,7 +49,7 @@ int main(int argc, char *argv[])
     try {
         easyfind(deque, std::atoi(argv[1]));
     }
-    catch (const std::exception &e) {
+    catch (std::exception const &e) {
         std::cout << e.what() << std::endl;
     }
 

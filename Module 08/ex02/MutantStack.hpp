@@ -6,7 +6,7 @@
 /*   By: pdelanno <pdelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 07:02:55 by pdelanno          #+#    #+#             */
-/*   Updated: 2023/10/08 09:25:14 by pdelanno         ###   ########.fr       */
+/*   Updated: 2023/10/21 09:01:03 by pdelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include <list>
 
 template < typename T, class Container = std::deque<T> > // default Container will be deque
-class MutantStack: public std::stack<T, Container> // exactly like stack would work
+class MutantStack: public std::stack<T, Container> // would work exactly like stack
 {
     private:
 
